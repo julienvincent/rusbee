@@ -1,0 +1,14 @@
+[Unit]
+Description=rusbee USBIP HTTP server
+Documentation=https://github.com/julienvincent/rusbee
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/rusbee server
+Restart=on-failure
+RestartSec=2s
+
+[Install]
+WantedBy=multi-user.target
